@@ -17,13 +17,11 @@
   </header>
   <section id="user-goal">
     <h2>My Course Goal</h2>
+    <!-- Interpolation and Data Binding -->
+    <!-- <p>{{courseGoal}}</p> -->
 
     <!-- Using methods to display data -->
-    <p>{{outputGoal()}}</p>
-
-    <!-- Outputting Raw HTML Content with v-html -->
-    <!--  <p v-html="outputGoal()"></p> -->
-
+    <p>{{ outputGoal() }}</p>
 
     <!-- Binding Attributes with the "v-bind" Directive -->
     <p> Learn more <a v-bind:href="vueLink"> About Vue</a>.</p>
