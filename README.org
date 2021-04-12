@@ -1,0 +1,27 @@
+#+TITLE:     Vue.js - The Complete Guide
+#+AUTHOR:    Martim Lima
+#+EMAIL:     martim.d.lima@protonmail.com
+#+DESCRIPTION:
+#+KEYWORDS:
+#+TIMESTAMP:
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 num:1 toc:2 author:t creator:t email:t
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+-----
+
+* Getting Started
+
+* Basics & Core Concepts - Dom Interation with Vue
+
+* Rendering Conditional Content & Lists
+
+* Course Project - The Monster Slayer Game
+
+* Vue - Behing the Scenes
+
+* Introducing Components
+
+* Moving to a Better Development Setup & Workflow with the Vue CLI
+
+* Component Communication
