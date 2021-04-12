@@ -3,9 +3,15 @@ const app = Vue.createApp({
         return {
             counter: 0,
             num: 5,
-            name: "Test",
+            name: "",
+            lastName: "LastName",
             confirmedName: "",
         };
+    },
+    computed: {
+        computedFullName() {
+            return this.name === "" ? "" : this.name + " " + this.lastName;
+        },
     },
     methods: {
         updateInput() {
@@ -20,11 +26,14 @@ const app = Vue.createApp({
         subtract(num) {
             this.counter -= num;
         },
-        setName(event, lastName) {
+        setName(event) {
             this.name = event.target.value;
         },
         resetInput() {
             this.name = "";
+        },
+        outputFullName() {
+            return this.name === "" ? "" : this.name + " " + this.lastName;
         },
     },
 });

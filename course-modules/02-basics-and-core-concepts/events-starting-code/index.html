@@ -21,16 +21,10 @@
     <button v-on:click="subtract(5)">Remove 5</button>
     <p v-once>Starting Result: {{ counter }}</p>
     <p>Result: {{ counter }}</p>
-    <!-- <input type="text" v-bind:value="name" v-on:input="setName($event, 'lastName')" v-on:keyup.enter="updateInput"> -->
-    <!-- two-away binding - v-model - is a shortcut for v-bind:value and v-on:input -->
     <input type="text" v-model="name">
     <button v-on:click="resetInput">Reset Input</button>
-    <p>Your Name: {{name}}</p>
-    <!-- event modifiers -->
-    <!--     <form v-on:submit.prevent="submitForm">
-      <input type="text">
-      <button>Sign Up</button>
-    </form> -->
+    <!-- Computed Properties - a key feature for outputting dynamic values that depend on one or multiple input values and one hard-coded value. -->
+    <p>Your Name: {{ computedFullName}}</p>
   </section>
 </body>
 
