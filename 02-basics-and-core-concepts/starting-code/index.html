@@ -19,7 +19,11 @@
     <h2>My Course Goal</h2>
 
     <!-- Using methods to display data -->
-    <p>{{ outputGoal() }}</p>
+    <p>{{outputGoal()}}</p>
+
+    <!-- Outputting Raw HTML Content with v-html -->
+    <!--  <p v-html="outputGoal()"></p> -->
+
 
     <!-- Binding Attributes with the "v-bind" Directive -->
     <p> Learn more <a v-bind:href="vueLink"> About Vue</a>.</p>
