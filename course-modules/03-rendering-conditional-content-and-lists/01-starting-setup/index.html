@@ -24,8 +24,14 @@
     <!-- V-if really removes and adds elements from and to the DOM. So it really impacts which elements are part of the DOM.
          v-show on the other hand, just hides and show items with CSS. -->
     <ul v-show="goals.length !== 0">
-      <li v-for="goal in goals">{{goal}}</li>
+      <!-- extracting the index of an array element -->
+      <li v-for="(goal, index) in goals">{{index}} - {{goal}}</li>
     </ul>
+    <!-- loop through objects -->
+    <!-- extracting the key and index of an object -->
+    <!--     <ul>
+      <li v-for="(value, key, index) in user">{{index}} : {{key}} - {{value}}</li>
+    </ul> -->
   </section>
 </body>
 
