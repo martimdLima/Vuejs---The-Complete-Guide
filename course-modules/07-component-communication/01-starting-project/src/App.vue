@@ -8,11 +8,13 @@
         name="John Doe"
         phone-number="972347899"
         email-address="test@test.com"
+        is-favorite="1"
       ></friend-contact>
       <friend-contact
         name="Jane Doe"
         phone-number="987654731"
         email-address="test2@test.com"
+        is-favorite="0"
       ></friend-contact>
     </ul>
   </section>
