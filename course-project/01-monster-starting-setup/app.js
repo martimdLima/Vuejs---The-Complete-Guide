@@ -10,6 +10,7 @@ const app = Vue.createApp({
             monsterHealth: 100,
             monsterAttack: 5,
             currentRound: 0,
+            winner: null,
         };
     },
     computed: {
@@ -21,6 +22,26 @@ const app = Vue.createApp({
         },
         isSpecialAttackAvailable() {
             return this.currentRound % 3 !== 0;
+        },
+    },
+    watch: {
+        playerHealth(value) {
+            if (value <= 0 && this.monsterHealth <= 0) {
+                this.winner = "draw";
+            }
+
+            if (value <= 0) {
+                this.winner = "monster";
+            }
+        },
+        monsterHealth(value) {
+            if (value <= 0 && this.playerHealth <= 0) {
+                this.winner = "draw";
+            }
+
+            if (value <= 0) {
+                this.winner = "player";
+            }
         },
     },
     methods: {
@@ -41,10 +62,13 @@ const app = Vue.createApp({
             this.currentRound++;
         },
         healPlayer() {
-            const healValue = getRandomValue(20, 5);
-            this.playerHealth = this.playerHealth + healValue < 100 ? this.playerHealth+=healValue : 100;
+            const healValue = getRandomValue(5, 20);
+            this.playerHealth =
+                this.playerHealth + healValue < 100
+                    ? (this.playerHealth += healValue)
+                    : 100;
             this.attackPlayer();
-        }
+        },
     },
 });
 
