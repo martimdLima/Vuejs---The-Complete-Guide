@@ -25,7 +25,12 @@
          v-show on the other hand, just hides and show items with CSS. -->
     <ul v-show="goals.length !== 0">
       <!-- extracting the index of an array element -->
-      <li v-for="(goal, index) in goals" @click="removeGoal(index)">{{index}} - {{goal}}</li>
+      <!-- The key attribute, is not a default HTML attribute, instead it is an attribute understood and detected by Vue.
+           It's optional, but it is a good idea to add it whenever you're using V-for. -->
+      <li v-for="(goal, index) in goals" :key="goal" @click="removeGoal(index)">
+        <p>{{index}} - {{goal}}</p>
+        <input type="text" @click.stop>
+      </li>
     </ul>
     <!-- loop through objects -->
     <!-- extracting the key and index of an object -->
