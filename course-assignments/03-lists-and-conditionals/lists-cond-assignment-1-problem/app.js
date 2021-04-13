@@ -1,18 +1,23 @@
 const app = Vue.createApp({
     data() {
-        return { tasks: [], enteredTask: "", displayList: true, buttonCaption: "Hide",  user: { name: "Test", age: 32 } };
+        return { tasks: [], enteredTask: "", displayList: true };
+    },
+    computed: {
+        buttonCaption() {
+            return this.displayList === true ? "Hide" : "Show";
+        },
     },
     methods: {
         addTask() {
             this.tasks.push(this.enteredTask);
         },
         removeTask(index) {
-          this.tasks.splice(index, 1);
+            this.tasks.splice(index, 1);
         },
         listHandler() {
             this.displayList = !this.displayList;
-            this.buttonCaption = this.displayList === true ? "Hide" : "Show";
-        }
+            //this.buttonCaption = this.displayList === true ? "Hide" : "Show";
+        },
     },
 });
 
