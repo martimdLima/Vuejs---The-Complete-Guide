@@ -20,10 +20,12 @@
     <input type="text" v-model="enteredGoal" />
     <button @click="addGoal">Add Goal</button>
     <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
-    <ul>
+    <!-- V-else needs to be used on a direct neighbor element of the element which has v-if. -->
+    <ul v-else="goals.length !== 0">
       <li>Goal</li>
     </ul>
   </section>
 </body>
 
 </html>
+
