@@ -1,22 +1,23 @@
 <template>
   <div>
-
     <TheHeader />
     <BadgeList />
-    <UserInfo :full-name="activeUser.name"
+    <UserInfo
+      :full-name="activeUser.name"
       :info-text="activeUser.description"
-      :role="activeUser.role" />
+      :role="activeUser.role"
+    />
   </div>
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader";
-import BadgeList from './components/BadgeList.vue';
-import UserInfo from './components/UserInfo.vue';
+import BadgeList from "./components/BadgeList.vue";
+import UserInfo from "./components/UserInfo.vue";
 
 export default {
   /* components: { "the-header": TheHeader }, */
-  components: {TheHeader, BadgeList, UserInfo},
+  components: { TheHeader, BadgeList, UserInfo },
   data() {
     return {
       activeUser: {
