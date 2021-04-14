@@ -3,16 +3,9 @@
 
     <TheHeader />
     <BadgeList />
-    <UserInfo full-name="activeUser.name"
+    <UserInfo :full-name="activeUser.name"
       :info-text="activeUser.description"
       :role="activeUser.role" />
-<!-- <the-header></the-header>
-    <badge-list></badge-list>
-    <user-info
-      :full-name="activeUser.name"
-      :info-text="activeUser.description"
-      :role="activeUser.role"
-    ></user-info> -->
   </div>
 </template>
 
