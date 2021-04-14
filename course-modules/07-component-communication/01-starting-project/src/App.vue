@@ -14,6 +14,7 @@
         :email-address="friend.email"
         :is-favorite="friend.isFavorite"
         @toggle-favorite="toggleFavorite"
+        @delete-friend="deleteFriendContact"
       ></friend-contact>
     </ul>
   </section>
@@ -25,14 +26,14 @@ export default {
     return {
       friends: [
         {
-          id: new Date().toISOString(),
+          id: new Date("2020/04/03").toISOString(),
           name: "John Doe",
           phone: "953283454",
           email: "test@test.com",
           isFavorite: true,
         },
         {
-          id: new Date().toISOString(),
+          id: new Date("2020/04/04").toISOString(),
           name: "Jane Doe",
           phone: "954853214",
           email: "test@test.com",
@@ -57,6 +58,10 @@ export default {
       };
 
       this.friends.push(newFriend);
+    },
+    deleteFriendContact(id) {
+      console.log(id);
+      this.friends = this.friends.filter((friend) => friend.id !== id);
     },
   },
 };

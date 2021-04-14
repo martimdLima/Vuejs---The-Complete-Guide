@@ -16,6 +16,7 @@
           {{ emailAddress }}
         </li>
       </ul>
+      <button @click="deleteFriend">Delete</button>
     </li>
   </ul>
 </template>
@@ -34,7 +35,7 @@ export default {
       default: false,
     },
   },
-  emits: ["toggleFavorite"],
+  emits: ["toggleFavorite", "delete-friend"],
   /*   emits: {
     "toggle-favorite": function(id) {
       return id ? true : false;
@@ -54,6 +55,9 @@ export default {
       //Emitting Custom Events (Child => Parent Communication)
       this.$emit("toggle-favorite", this.id);
     },
+    deleteFriend() {
+      this.$emit("delete-friend", this.id)
+    }
   },
 };
 </script>
