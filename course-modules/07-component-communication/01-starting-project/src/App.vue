@@ -3,6 +3,7 @@
     <header>
       <h1>My Friends</h1>
     </header>
+    <new-friend @add-contact="addContact"></new-friend>
     <ul>
       <friend-contact
         v-for="friend in friends"
@@ -24,14 +25,14 @@ export default {
     return {
       friends: [
         {
-          id: "tf1",
+          id: new Date().toISOString(),
           name: "John Doe",
           phone: "953283454",
           email: "test@test.com",
           isFavorite: true,
         },
         {
-          id: "tf2",
+          id: new Date().toISOString(),
           name: "Jane Doe",
           phone: "954853214",
           email: "test@test.com",
@@ -45,6 +46,17 @@ export default {
       //console.log(fId);
       const idFriend = this.friends.find((friend) => friend.id === friendId);
       idFriend.isFavorite = !idFriend.isFavorite;
+    },
+    addContact(name, phone, email) {
+      const newFriend = {
+        id: new Date().toISOString(),
+        name: name,
+        phone: phone,
+        email: email,
+        isFavorite: false,
+      };
+
+      this.friends.push(newFriend);
     },
   },
 };
@@ -76,7 +88,8 @@ header {
   padding: 0;
   list-style: none;
 }
-#app li {
+#app li,
+#app form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
@@ -105,5 +118,19 @@ header {
   background-color: #ec3169;
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+}
+
+#app input {
+  font: inherit;
+  padding: 0.15rem;
+}
+#app label {
+  font-weight: bold;
+  margin-right: 1rem;
+  width: 7rem;
+  display: inline-block;
+}
+#app form div {
+  margin: 1rem 0;
 }
 </style>
