@@ -31,20 +31,11 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-      validator: function (value) {
-        return value || !value;
-      },
     },
   },
   data() {
     return {
       detailsAreVisible: false,
-      friend: {
-        id: "tf1",
-        name: "John Doe",
-        phone: "953283454",
-        email: "test@test.com",
-      },
       friendIsfavorite: this.isFavorite,
     };
   },
@@ -53,11 +44,6 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible;
     },
     toggleFavorite() {
-      /*       if (this.friendIsfavorite === "1") {
-        this.friendIsfavorite = "0";
-      } else {
-        this.friendIsfavorite = "1";
-      } */
       this.friendIsfavorite = !this.friendIsfavorite;
     },
   },

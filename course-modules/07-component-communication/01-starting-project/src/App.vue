@@ -5,16 +5,12 @@
     </header>
     <ul>
       <friend-contact
-        name="John Doe"
-        phone-number="972347899"
-        email-address="test@test.com"
-        is-favorite="true"
-      ></friend-contact>
-      <friend-contact
-        name="Jane Doe"
-        phone-number="987654731"
-        email-address="test2@test.com"
-        is-favorite="false"
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+        :is-favorite="friend.isFavorite"
       ></friend-contact>
     </ul>
   </section>
