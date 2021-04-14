@@ -1,8 +1,7 @@
 <template>
   <div>
     <header v-if="$slots.header">
-      <slot name="header">
-      </slot>
+      <slot name="header"> </slot>
     </header>
     <slot></slot>
   </div>
