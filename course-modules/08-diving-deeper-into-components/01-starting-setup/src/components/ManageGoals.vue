@@ -1,5 +1,8 @@
+/* In Vue.js version two, you were required to have one root level element per template,
+and then, in there, you could have as many sibling elements as you wanted to.
+In Vue free, this changed, and now, you can have as many top-level elements as you want. */
+
 <template>
-  <div>
     <h2>Manage Goals</h2>
     <input type="text" ref="goal" />
     <button @click="setGoal">Set Goal</button>
@@ -10,7 +13,6 @@
       <button @click="confirmError">Okay</button>
     </error-alert>
     </teleport>
-  </div>
 </template>
 
 <script>
