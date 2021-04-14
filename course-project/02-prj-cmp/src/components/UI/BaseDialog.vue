@@ -26,9 +26,9 @@ export default {
     title: {
       type: String,
       required: false
-    },
+    }
   },
-  emits: ["close"]
+  emits: ['close']
 };
 </script>
 
