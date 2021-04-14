@@ -34,6 +34,12 @@ export default {
       default: false,
     },
   },
+  emits: ["toggleFavorite"],
+  /*   emits: {
+    "toggle-favorite": function(id) {
+      return id ? true : false;
+    } 
+  },*/
   data() {
     return {
       detailsAreVisible: false,
