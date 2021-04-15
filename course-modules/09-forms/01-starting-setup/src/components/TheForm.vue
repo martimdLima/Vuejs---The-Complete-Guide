@@ -105,7 +105,7 @@
     </div>
 
     <div class="form-control">
-      <rating-control></rating-control>
+      <rating-control v-model="userRating"></rating-control>
     </div>
     <div class="form-control">
       <div>
@@ -125,7 +125,7 @@
 </template>
 
 <script>
-import RatingControl from "./RatingControl";
+import RatingControl from './RatingControl';
 
 export default {
   components: {
@@ -139,7 +139,8 @@ export default {
       userInterest: [],
       userHow: [],
       userConfirm: false,
-      userNameValidity: 'pending'
+      userNameValidity: 'pending',
+      userRating: null
     };
   },
   methods: {
@@ -149,8 +150,16 @@ export default {
       console.log(this.userInterest);
       console.log(this.userHow);
       console.log(this.userConfirm);
+      console.log(this.userRating);
       console.log(this.$refs.refererInput.value);
       console.log(this.$refs.ageInput.value);
+      this.userName = '';
+      (this.userAge = null), (this.userReferer = 'wom');
+      this.userInterest = [];
+      this.userHow = [];
+      this.userConfirm = false;
+      this.userNameValidity = 'pending';
+      this.userRating = null;
     },
     validateInput() {
       this.userNameValidity = this.userName === '' ? 'invalid' : 'valid';
