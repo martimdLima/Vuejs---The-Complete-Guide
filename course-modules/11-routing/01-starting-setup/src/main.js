@@ -57,6 +57,10 @@ router.beforeEach((to, from, next) => {
     } */
 });
 
+router.afterEach((to, from) => {
+    console.log(to, from);
+});
+
 const app = createApp(App);
 
 app.use(router);

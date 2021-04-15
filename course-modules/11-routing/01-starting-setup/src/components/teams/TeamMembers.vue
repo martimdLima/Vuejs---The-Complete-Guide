@@ -32,7 +32,7 @@ export default {
   },
   beforeRouteUpdate(to, from, next) {
     console.log(to, from);
-    this.loadTeamMembers(to.params.teamId);
+    //this.loadTeamMembers(to.params.teamId);
     next();
   },
   methods: {
