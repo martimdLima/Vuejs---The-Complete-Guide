@@ -30,31 +30,78 @@
     <div class="form-control">
       <h2>What are you interested in?</h2>
       <div>
-        <input id="interest-news" name="interest" type="checkbox" />
+        <input
+          id="interest-news"
+          name="interest"
+          type="checkbox"
+          value="news"
+          v-model="userInterest"
+        />
         <label for="interest-news">News</label>
       </div>
       <div>
-        <input id="interest-tutorials" name="interest" type="checkbox" />
+        <input
+          id="interest-tutorials"
+          name="interest"
+          type="checkbox"
+          value="tutorials"
+          v-model="userInterest"
+        />
         <label for="interest-tutorials">Tutorials</label>
       </div>
       <div>
-        <input id="interest-nothing" name="interest" type="checkbox" />
+        <input
+          id="interest-nothing"
+          name="interest"
+          type="checkbox"
+          value="nothing"
+          v-model="userInterest"
+        />
         <label for="interest-nothing">Nothing</label>
       </div>
     </div>
     <div class="form-control">
       <h2>How do you learn?</h2>
       <div>
-        <input id="how-video" name="how" type="radio" />
+        <input
+          id="how-video"
+          name="how"
+          type="radio"
+          value="video"
+          v-model="userHow"
+        />
         <label for="how-video">Video Courses</label>
       </div>
       <div>
-        <input id="how-blogs" name="how" type="radio" />
+        <input
+          id="how-blogs"
+          name="how"
+          type="radio"
+          value="blogs"
+          v-model="userHow"
+        />
         <label for="how-blogs">Blogs</label>
       </div>
       <div>
-        <input id="how-other" name="how" type="radio" />
+        <input
+          id="how-other"
+          name="how"
+          type="radio"
+          value="other"
+          v-model="userHow"
+        />
         <label for="how-other">Other</label>
+      </div>
+    </div>
+    <div class="form-control">
+      <div>
+        <input
+          id="confirm-terms"
+          name="confirm-terms"
+          type="checkbox"
+          v-model="userConfirm"
+        />
+        <label for="confirm-terms">Agree to the terms of use?</label>
       </div>
     </div>
     <div>
@@ -69,13 +116,19 @@ export default {
     return {
       userName: '',
       userAge: null,
-      userReferer: 'wom'
+      userReferer: 'wom',
+      userInterest: [],
+      userHow: [],
+      userConfirm: false,
     };
   },
   methods: {
     submitForm() {
       console.log(this.userName + ' ' + this.userAge);
       console.log(this.userReferer);
+      console.log(this.userInterest);
+      console.log(this.userHow);
+      console.log(this.userConfirm);
       console.log(this.$refs.refererInput.value);
       console.log(this.$refs.ageInput.value);
     }
