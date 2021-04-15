@@ -25,3 +25,9 @@
 * Moving to a Better Development Setup & Workflow with the Vue CLI
 
 * Component Communication
+
+
+
+* Modules used
+    + axios
+    + vue-router
