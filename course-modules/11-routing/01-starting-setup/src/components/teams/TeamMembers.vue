@@ -27,9 +27,13 @@ export default {
     };
   },
  created() {
+   this.loadTeamMembers(this.$route);
+  },
+  methods: {
+    loadTeamMembers(route) {
      // assing Data with Route Params (Dynamic Segments)
     // this.$route.path // /teams/t1
-    const teamId = this.$route.params.teamId;
+    const teamId = route.params.teamId;
     const selectedTeam = this.teams.find(team => team.id === teamId);
     const members = selectedTeam.members;
     const selectedMembers = [];
@@ -39,6 +43,12 @@ export default {
     }
     this.members = selectedMembers;
     this.teamName = selectedTeam.name;
+    }
+  },
+  watch: {
+    $route(newRoute) {
+      this.loadTeamMembers(newRoute);
+    }
   }
 };
 </script>
