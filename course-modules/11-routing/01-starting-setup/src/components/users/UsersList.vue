@@ -1,5 +1,6 @@
 <template>
   <button @click="confirmInput">Confirm</button>
+  <button @click="changesSaved">Save Changes</button>
   <ul>
     <user-item
       v-for="user in users"
@@ -17,11 +18,33 @@ export default {
   components: {
     UserItem
   },
+  data() {
+    return {
+      changesSaved: false
+    };
+  },
   methods: {
     confirmInput() {
       // navigationg programatically
       this.$router.push('/teams');
+    },
+    saveChanges() {
+      this.changesSaved = true;
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log(to, from);
+    if (this.changesSaved) {
+      next();
+    } else {
+      const userPrompt = confirm(
+        'You have unsaved changes, are you sure you wanna leave?'
+      );
+      next(userPrompt);
+    }
+  },
+  unmounted() {
+    console.log('unmounted!');
   },
   beforeRouteEnter(to, from, next) {
     console.log(to, from);
