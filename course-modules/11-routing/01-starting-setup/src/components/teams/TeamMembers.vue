@@ -30,18 +30,22 @@ export default {
   created() {
     this.loadTeamMembers(this.teamId);
   },
+  beforeRouteUpdate(to, from, next) {
+    console.log(to, from);
+    this.loadTeamMembers(to.params.teamId);
+    next();
+  },
   methods: {
     loadTeamMembers(teamId) {
-      // assing Data with Route Params (Dynamic Segments)
-      // this.$route.path // /teams/t1
-      //const teamId = route.params.teamId;
       const selectedTeam = this.teams.find(team => team.id === teamId);
       const members = selectedTeam.members;
       const selectedMembers = [];
+
       for (const member of members) {
         const selectedUser = this.users.find(user => user.id === member);
         selectedMembers.push(selectedUser);
       }
+
       this.members = selectedMembers;
       this.teamName = selectedTeam.name;
     }

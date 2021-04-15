@@ -27,7 +27,14 @@ const router = createRouter({
         }
       ]
     },
-    { path: '/users', components: { default: UsersList, footer: UsersFooter } },
+    {
+      path: '/users',
+      components: { default: UsersList, footer: UsersFooter },
+      beforeEnter(to, from, next) {
+        console.log(to, from);
+        next();
+      }
+    },
     /* { path: '/:notFound(.*)', redirect: '/teams'} */
     { path: '/:notFound(.*)', component: NotFound }
   ],
