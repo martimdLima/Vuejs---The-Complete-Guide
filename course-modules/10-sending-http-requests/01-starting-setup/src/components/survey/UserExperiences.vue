@@ -64,9 +64,11 @@ export default {
           }
 
           this.results = results;
-          console.log(response.data);
         });
     }
+  },
+  mounted() {
+    this.loadExperiences();
   },
   components: {
     SurveyResult
