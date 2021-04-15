@@ -74,7 +74,7 @@ export default {
       //   rating: this.chosenRating,
       // });
 
-/*       fetch(
+      /*       fetch(
         'https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/surveys.json',
         {
           method: 'POST',
@@ -88,10 +88,13 @@ export default {
         }
       ); */
 
-      axios.post('https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/surveys.json', {
-        name: this.enteredName,
-        rating: this.chosenRating
-      });
+      axios.post(
+        'https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/surveys.json',
+        {
+          name: this.enteredName,
+          rating: this.chosenRating
+        }
+      );
 
       this.enteredName = '';
       this.chosenRating = null;

@@ -11,8 +11,8 @@ export default {
   components: {
     LearningSurvey,
     UserExperiences
-  },
-/*   data() {
+  }
+  /*   data() {
     return {
       savedSurveyResults: []
     };
