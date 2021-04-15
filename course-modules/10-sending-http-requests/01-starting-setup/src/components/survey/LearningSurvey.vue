@@ -41,6 +41,7 @@
         <p v-if="invalidInput">
           One or more input fields are invalid. Please check your provided data.
         </p>
+        <p v-if="error">{{ error }}</p>
         <div>
           <base-button>Submit</base-button>
         </div>
@@ -57,12 +58,15 @@ export default {
     return {
       enteredName: '',
       chosenRating: null,
-      invalidInput: false
+      invalidInput: false,
+      error: null
     };
   },
   // emits: ['survey-submit'],
   methods: {
     submitSurvey() {
+      this.error = null;
+
       if (this.enteredName === '' || !this.chosenRating) {
         this.invalidInput = true;
         return;
@@ -74,27 +78,42 @@ export default {
       //   rating: this.chosenRating,
       // });
 
-      /*       fetch(
-        'https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/surveys.json',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
+      //       fetch(
+      //   'https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/surveys.json',
+      //   {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json'
+      //     },
+      //     body: {
+      //       name: this.enteredName,
+      //       rating: this.chosenRating
+      //     }
+      //   }
+      // ).then(response => {
+      //     if(response.ok) {
+      //       ///
+      //     } else {
+      //       throw new Error("Could not save data!");
+      //     }
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //     this.error = err.message;
+      //   });
+
+      axios
+        .post(
+          'https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/surveys.json',
+          {
             name: this.enteredName,
             rating: this.chosenRating
-          })
-        }
-      ); */
-
-      axios.post(
-        'https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/surveys.json',
-        {
-          name: this.enteredName,
-          rating: this.chosenRating
-        }
-      );
+          }
+        )
+        .catch(err => {
+          console.log(err);
+          this.error = 'Something went wrong - try again later!';
+        });
 
       this.enteredName = '';
       this.chosenRating = null;
