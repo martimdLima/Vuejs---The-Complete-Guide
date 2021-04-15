@@ -81,6 +81,7 @@ button:active {
   animation: slide-fade 0.3s ease-out forwards;
 }
 
+/*  CSS Animations */
 @keyframes slide-fade {
   0% {
     transform: translateX(0) scale(1);
