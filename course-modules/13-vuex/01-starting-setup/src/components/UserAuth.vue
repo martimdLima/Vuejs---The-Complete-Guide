@@ -9,10 +9,10 @@ import { mapGetters } from 'vuex';
 
 export default {
   methods: {
-    ...mapActions({ login: 'login', logout: 'logout' })
+    ...mapActions('auth', { login: 'login', logout: 'logout' })
   },
   computed: {
-      ...mapGetters({isAuth: 'userIsAuthenticated'})
+    ...mapGetters('auth', { isAuth: 'userIsAuthenticated' })
   }
 };
 </script>

@@ -3,7 +3,7 @@
     <the-counter></the-counter>
     <favorite-value></favorite-value>
     <change-counter></change-counter>
-    <button @click="addAmount()">Add ten</button>
+    <button @click="increment">Add ten</button>
   </base-container>
   <base-container>
     <user-auth></user-auth>
@@ -12,6 +12,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
 import BaseContainer from './components/BaseContainer.vue';
 import TheCounter from './components/TheCounter.vue';
@@ -28,16 +29,10 @@ export default {
     UserAuth
   },
   methods: {
-    addAmount() {
-      //this.$store.commit('increase', {value: 10});
-      this.$store.dispatch({
-        type: 'increase',
-        value: 10
-      });
-    }
+    ...mapActions('numbers', ['increment', 'increase'])
   },
-    computed: {
-      ...mapGetters({isAuth: 'userIsAuthenticated'})
+  computed: {
+    ...mapGetters('auth', { isAuth: 'userIsAuthenticated' })
   }
 };
 </script>
