@@ -31,3 +31,4 @@
 * Modules used
     + axios
     + vue-router
+    + vue-router@next
