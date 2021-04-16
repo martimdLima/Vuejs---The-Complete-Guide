@@ -1,11 +1,11 @@
 <template>
-    <button @click="addOne">Add One</button>
+  <button @click="addAmount">Add One</button>
 </template>
 
 <script>
 export default {
   methods: {
-    addOne() {
+    addAmount() {
       this.$store.commit('increment');
     }
   }
