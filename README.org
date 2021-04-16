@@ -32,3 +32,4 @@
     + axios
     + vue-router
     + vue-router@next
+    + vuex@next
