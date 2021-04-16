@@ -5,6 +5,7 @@
   </div>
   <div class="container">
     <transition
+      :css="false"
       name="para"
       @before-enter="beforeEnter"
       @before-leave="beforeLeave"
