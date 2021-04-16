@@ -6,7 +6,7 @@
 export default {
   methods: {
     addAmount() {
-      this.$store.commit('increment');
+      this.$store.dispatch('increment');
     }
   }
 };
