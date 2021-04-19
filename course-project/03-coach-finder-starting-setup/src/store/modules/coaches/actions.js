@@ -10,8 +10,10 @@ export default {
       areas: payload.areas
     };
 
+    const token = context.rootGetters.token;
+
     const response = await fetch(
-      `https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json`,
+      `https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json?auth=${token}`,
       {
         method: 'PUT',
         body: JSON.stringify(coach)
