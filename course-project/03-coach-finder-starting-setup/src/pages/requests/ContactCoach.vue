@@ -40,7 +40,7 @@ export default {
       }
 
       const formData = {
-        coachId: this.$route.id,
+        coachId: this.$route.params.id,
         email: this.email,
         message: this.message
       };
