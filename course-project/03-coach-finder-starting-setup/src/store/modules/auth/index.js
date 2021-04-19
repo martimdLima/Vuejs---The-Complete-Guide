@@ -1,12 +1,13 @@
-import mutations from './mutations';
-import actions from './actions';
-import getters from './getters';
+import mutations from './mutations.js';
+import actions from './actions.js';
+import getters from './getters.js';
 
 export default {
-  namespaced: true,
   state() {
     return {
-      userId: 'c3'
+      userId: null,
+      token: null,
+      tokenExpiration: null
     };
   },
   mutations,
