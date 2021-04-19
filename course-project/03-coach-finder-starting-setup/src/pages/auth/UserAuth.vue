@@ -1,9 +1,9 @@
 <template>
   <div>
-    <base-dialog :show="!!error" title="An error occured" @close="handleError">
-      <p>{{ error }}</p></base-dialog
-    >
-    <base-dialog :show="isLoading" :fixed="isLoading" title="Authenticating...">
+    <base-dialog :show="!!error" title="An error occurred" @close="handleError">
+      <p>{{ error }}</p>
+    </base-dialog>
+    <base-dialog :show="isLoading" title="Authenticating..." fixed>
       <base-spinner></base-spinner>
     </base-dialog>
     <base-card>
@@ -68,6 +68,7 @@ export default {
         this.formIsValid = false;
         return;
       }
+
       this.isLoading = true;
 
       const actionPayload = {
@@ -81,14 +82,11 @@ export default {
         } else {
           await this.$store.dispatch('signup', actionPayload);
         }
+        const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+        this.$router.replace(redirectUrl);
       } catch (err) {
-        this.error =
-          err.message || 'Failed to authenticate, please try again later';
+        this.error = err.message || 'Failed to authenticate, try later.';
       }
-
-      const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
-
-      this.$router.replace(redirectUrl);
 
       this.isLoading = false;
     },
