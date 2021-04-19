@@ -29,7 +29,11 @@ export default {
 
     context.commit('registerCoach', responseData);
   },
-  async loadCoaches(context) {
+  async loadCoaches(context, payload) {
+    if (!context.getters.shouldUpdate && !payload.forceRefresh) {
+      return;
+    }
+
     const response = await fetch(
       `https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/coaches.json`
     );
@@ -56,5 +60,6 @@ export default {
     }
 
     context.commit('setCoaches', coaches);
+    context.commit('setFetchTimestamp');
   }
 };
