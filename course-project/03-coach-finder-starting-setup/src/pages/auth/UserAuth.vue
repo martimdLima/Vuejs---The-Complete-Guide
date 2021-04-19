@@ -86,6 +86,10 @@ export default {
           err.message || 'Failed to authenticate, please try again later';
       }
 
+      const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+
+      this.$router.replace(redirectUrl);
+
       this.isLoading = false;
     },
     switchAuthMode() {
