@@ -3,7 +3,7 @@
     <base-dialog :show="!!error" title="An error occured" @close="handleError">
       <p>{{ error }}</p></base-dialog
     >
-    <base-dialog :fixed="isLoading" title="Authenticating...">
+    <base-dialog :show="isLoading" :fixed="isLoading" title="Authenticating...">
       <base-spinner></base-spinner>
     </base-dialog>
     <base-card>
