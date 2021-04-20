@@ -49,40 +49,6 @@
 </template>
 
 <script>
-/*     import {mapActions} from 'vuex';
-
-    export default {
-        data() {
-          return {
-              isDropdownOpen: false
-          }
-        },
-        computed: {
-            funds() {
-                return this.$store.getters.funds;
-            }
-        },
-        methods: {
-            ...mapActions({
-                randomizeStocks: 'randomizeStocks',
-                fetchData: 'loadData'
-            }),
-            endDay() {
-                this.randomizeStocks();
-            },
-            saveData() {
-                const data = {
-                    funds: this.$store.getters.funds,
-                    stockPortfolio: this.$store.getters.stockPortfolio,
-                    stocks: this.$store.getters.stocks
-                };
-                this.$http.put('data.json', data);
-            },
-            loadData() {
-                this.fetchData();
-            }
-        }
-    } */
 import { mapActions } from "vuex";
 
 export default {
