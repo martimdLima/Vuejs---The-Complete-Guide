@@ -28,7 +28,7 @@ export default {
   async fetchRequests(context) {
     const coachId = context.rootGetters.userId;
     const token = context.rootGetters.token;
-    console.log(token);
+
     const response = await fetch(
       `https://vuejs-course-d14c4-default-rtdb.europe-west1.firebasedatabase.app/requests/${coachId}.json?auth=${token}`
     );
