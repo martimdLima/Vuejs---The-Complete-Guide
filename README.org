@@ -26,10 +26,18 @@
 
 * Component Communication
 
+* Course Project
 
+* Modules and Services used
+ + axios
+ + vue-router
+ + vue-router@next
+ + vuex@next
+
+* Useful Links and Resources
++ [[https://github.com/vuejs/vue-next/releases/tag/v3.0.0][Official Release Notes]]
++ [[https://v3.vuejs.org/guide/migration/introduction.html#quickstart][Vue]]
++ [[https://next.router.vuejs.org/guide/migration/#new-features][Vue Router]]
++ [[https://github.com/vuejs/vuex/tree/4.0#breaking-changes][Vuex]]
 
 * Modules used
-    + axios
-    + vue-router
-    + vue-router@next
-    + vuex@next
